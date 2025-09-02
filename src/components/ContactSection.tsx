@@ -39,7 +39,7 @@ export default function ContactSection() {
     };
 
     const validate = () => {
-        let newErrors: { [key: string]: string } = {};
+        const newErrors: { [key: string]: string } = {};
         if (!formData.nome.trim()) newErrors.nome = "Campo obrigatório";
         if (!formData.email.trim()) newErrors.email = "Campo obrigatório";
         if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email inválido";
