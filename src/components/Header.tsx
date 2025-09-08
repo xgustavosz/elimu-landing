@@ -37,7 +37,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="#robopel"
+                href="/robopel"
                 className="text-primary font-extrabold hover:underline"
               >
                 ROBOPEL

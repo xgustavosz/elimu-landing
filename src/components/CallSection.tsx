@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 export default function CallSection() {
   return (
     <div
@@ -18,8 +22,8 @@ export default function CallSection() {
         </p>
       </div>
 
-      <button className="relative mt-6 lg:mt-0 z-10 p-2 w-[200px] ml-8 bg-secondary text-white hover:opacity-90 transition-opacity duration-100 cursor-pointer">
-        Chamar a Elimu
+      <button onClick={() => window.open("https://wa.me/5553991299693", "_blank")} className="relative flex items-center justify-center gap-2 mt-6 lg:mt-0 z-10 p-2 w-[200px] ml-8 bg-secondary text-white hover:opacity-90 transition-opacity duration-100 cursor-pointer">
+        <Image src="/images/whatsapp-icon.svg" alt="Whatsapp" width={20} height={20} />  Chamar a Elimu
       </button>
     </div>
   );

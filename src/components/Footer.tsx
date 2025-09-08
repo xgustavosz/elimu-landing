@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="relative md:h-[366px] text-white py-4">
+        <footer className="relative md:h-[366px] text-white py-4 z-20">
             {/* Background + Overlay */}
             <div className="absolute inset-0">
                 <div
@@ -38,15 +37,15 @@ export default function Footer() {
                         <h2 className="font-extrabold pb-2 md:pb-6 md:text-end">Social</h2>
                         <div className="flex flex-col lg:flex-row justify-end gap-4 text-sm">
                             <a href="https://instagram.com/elimusocial" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                                <FaInstagram className="text-2xl" />
+                                <Image src="/images/instagram-icon.svg" alt="Instagram" width={24} height={24} />
                                 @elimusocial
                             </a>
                             <a href="https://facebook.com/elimusocial" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                                <FaFacebookF className="text-2xl" />
+                                <Image src="/images/facebook-icon.svg" alt="Facebook" width={24} height={24} />
                                 elimusocial
                             </a>
                             <a href="https://linkedin.com/company/elimusocial" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                                <FaLinkedinIn className="text-2xl" />
+                                <Image src="/images/linkedin-icon.svg" alt="Linkedin" width={24} height={24} />
                                 elimu-social
                             </a>
                         </div>
