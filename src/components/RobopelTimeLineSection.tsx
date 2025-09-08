@@ -37,7 +37,7 @@ export default function RobopelTimeLineSection() {
                     <div className="mt-4">
                         <div className="flex justify-between gap-10">
                             <div>
-                                {timelineYears.map((year: any) => (
+                                {timelineYears.map((year) => (
                                     <div key={year.year} className={`border-l-4 ${isSelected === year.year ? 'border-secondary' : 'border-primary'}`}>
                                         <button onClick={() => setIsSelected(year.year)} disabled={year.year === 214} className={`hover:bg-secondary hover:opacity-70 transition-all cursor-pointer w-[220px] h-[72px] ml-10 ${isSelected === year.year ? 'bg-secondary' : 'transparent'} font-extrabold text-[1.25rem]`}>{year.year} - <span className={`${isSelected === year.year ? 'text-white' : 'text-primary font-medium'}`}>{year.label}</span></button>
                                     </div>
