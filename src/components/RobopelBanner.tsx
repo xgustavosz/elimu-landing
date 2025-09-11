@@ -1,9 +1,13 @@
 import Image from "next/image"
 
-export default function RobopelBanner() {
+interface RobopelBannerProps {
+    isFullWidth?: boolean
+}
+
+export default function RobopelBanner({ isFullWidth }: RobopelBannerProps) {
     return (
         <div
-            className="relative w-[260px] h-[445px] flex flex-col font-audiowide text-3xl text-center align-center justify-start"
+            className={`relative ${isFullWidth ? "w-full" : "w-[260px]"} h-[445px] flex flex-col font-audiowide text-3xl text-center align-center justify-start`}
             style={{
                 backgroundImage: "url('/images/background-robopel-banner.png')",
                 backgroundSize: "cover",

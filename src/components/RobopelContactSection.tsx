@@ -72,6 +72,7 @@ export default function RobopelContactSection() {
 
     return (
         <section
+            id="seja-parceiro"
             className="relative w-full bg-cover bg-center py-[60px] px-8 md:px-0"
             style={{ backgroundImage: "url('/images/background-contact-section.jpg')" }}
         >

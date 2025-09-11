@@ -66,6 +66,7 @@ export default function ContactSection() {
 
     return (
         <section
+            id="contato"
             className="relative w-full bg-cover bg-center py-[60px] px-6 md:px-0"
             style={{ backgroundImage: "url('/images/background-contact-section.jpg')" }}
         >

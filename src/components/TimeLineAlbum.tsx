@@ -67,28 +67,28 @@ export default function TimeLineAlbum({ year }: TimeLineAlbumProps) {
   return (
     <>
       {year === 213 && (
-        <div>
+        <div className="flex flex-col gap-1">
           <div className="flex gap-1">
-            <div className="relative w-[182px] h-[322px] bg-primary">
-              <Image src={img213_01} alt="Robopel 213" fill className="object-cover" placeholder="blur" />
+            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+              <Image src={img213_01} alt="Robopel 213 01" fill className="object-cover" placeholder="blur" />
             </div>
-            <div className="relative w-[554px] h-[322px] bg-primary">
+            <div className="relative w-[554px] h-[322px] aspect-auto bg-primary">
               <video src="/images/timeline/213/timeline-video.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
             </div>
           </div>
-          <div className="flex gap-1 mt-1">
-            <div className="relative w-[182px] h-[322px] bg-primary">
-              <Image src={img213_02} alt="Robopel 213" fill className="object-cover" placeholder="blur" />
+          <div className="flex gap-1">
+            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+              <Image src={img213_02} alt="Robopel 213 02" fill className="object-cover" placeholder="blur" />
             </div>
-            <div className="relative w-[182px] h-[322px] bg-primary">
-              <Image src={img213_03} alt="Robopel 213" fill className="object-cover" placeholder="blur" />
+            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+              <Image src={img213_03} alt="Robopel 213 03" fill className="object-cover" placeholder="blur" />
             </div>
             <div className="flex flex-col gap-1">
-              <div className="relative w-[367px] h-[158px] bg-primary">
-                <Image src={img213_04} alt="Robopel 213" fill className="object-cover" placeholder="blur" />
+              <div className="relative w-[367px] h-[158px] aspect-auto bg-primary">
+                <Image src={img213_04} alt="Robopel 213 04" fill className="object-cover" placeholder="blur" />
               </div>
-              <div className="relative w-[367px] h-[158px] bg-primary">
-                <Image src={img213_05} alt="Robopel 213" fill className="object-cover" placeholder="blur" />
+              <div className="relative w-[367px] h-[158px] aspect-auto bg-primary">
+                <Image src={img213_05} alt="Robopel 213 05" fill className="object-cover" placeholder="blur" />
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function TimeLineAlbum({ year }: TimeLineAlbumProps) {
               <Image src={img211_02} alt="Robopel 211 02" fill className="object-cover" placeholder="blur" />
             </div>
           </div>
-          <div className="flex gap-1 mt-1">
+          <div className="flex gap-1">
             <div className="flex flex-col gap-1">
               {[img211_03, img211_04].map((img, idx) => (
                 <div key={idx} className="relative w-[182px] h-[158px] bg-primary">

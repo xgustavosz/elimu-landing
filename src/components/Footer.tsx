@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="relative md:h-[366px] text-white py-4 z-20">
+        <footer className="relative md:h-[366px] text-white md:py-4 pt-4 pb-30 md:pb-0 z-20">
             {/* Background + Overlay */}
             <div className="absolute inset-0">
                 <div
@@ -17,14 +17,14 @@ export default function Footer() {
 
             {/* Conteúdo */}
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-20 flex flex-col gap-4 md:gap-10">
-                <div className="flex flex-col md:flex-row items-center justify-between h-full py-6 md:py-12 text-center md:text-start">
-                    <div className="mb-4 md:mb-0">
+                <div className="flex flex-col md:flex-row mx-auto md:mx-0 items-start md:items-center justify-between h-full py-6 md:py-12 text-start">
+                    <div>
                         <h2 className="font-extrabold pb-2 md:pb-6">Onde Estamos</h2>
                         <p className="font-medium text-sm">Pelotas Parque Tecnológico</p>
                         <p className="font-medium text-sm">Av. Domingos de Almeida, 1782 Areal</p>
                         <p className="font-medium text-sm">Pelotas RS - 96085-470</p>
                     </div>
-                    <div className="mb-4 md:mb-0">
+                    <div className="my-10 md:my-0">
                         <h2 className="font-extrabold pb-2 md:pb-6">Contato</h2>
                         <p className="font-medium text-sm">
                             Telefone: <a href="tel:+5553991299693" className="hover:underline">(53) 9 9129-9693</a>
@@ -33,7 +33,7 @@ export default function Footer() {
                             E-mail: <a href="mailto:elimu@elimusocial.com.br" className="hover:underline">elimu@elimusocial.com.br</a>
                         </p>
                     </div>
-                    <div className="mb-4 md:mb-0">
+                    <div>
                         <h2 className="font-extrabold pb-2 md:pb-6 md:text-end">Social</h2>
                         <div className="flex flex-col lg:flex-row justify-end gap-4 text-sm">
                             <a href="https://instagram.com/elimusocial" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">

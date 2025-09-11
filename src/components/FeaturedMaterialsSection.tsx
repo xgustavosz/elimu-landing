@@ -4,6 +4,7 @@ import { AiOutlineLink } from "react-icons/ai";
 export default function FeaturedMaterialsSection() {
     return (
         <div
+            id="materias"
             className="relative w-full py-[43px] px-8 pb-20"
             style={{ backgroundImage: 'url("/images/background-featured-section.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
