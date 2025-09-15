@@ -9,7 +9,7 @@ export default function HeroSection() {
       className="relative w-full mb-[300px] lg:mb-0 lg:mt-0 shadow-lg pt-[180px] lg:pt-[100px] pb-[160px] lg:pb-[200px] min-h-[734px] flex items-center justify-center py-12 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/background-hero-section.jpg')" }}
     >
-      <div className="relative max-w-6xl px-8 md:px-0 mx-auto h-full flex flex-col md:flex-row items-center lg:justify-between w-full">
+      <div className="relative max-w-7xl px-6 mx-auto h-full flex flex-col md:flex-row items-center lg:justify-between w-full">
         {/* Texto à esquerda */}
         <div className="lg:flex-1 pb-4 mx-auto flex flex-col items-center lg:items-start justify-center space-y-6 text-left">
           <h1 className="text-primary md:w-full w-[380px] text-5xl font-bold font-audiowide">
