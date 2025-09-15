@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import RobopelBanner from "./RobopelBanner";
-import PublicationCard from "./PublicationCard";
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import RobopelBanner from "./RobopelBanner"
+import PublicationCard from "./PublicationCard"
 
 export default function PublicationsSection() {
   const PublicationsData = [
@@ -15,70 +16,95 @@ export default function PublicationsSection() {
       cardName:
         "Celulares nas Escolas: Desafios, Impactos e a Computação Criativa como alternativa",
       publication: "Medium",
-      imageUrl: "/images/publication-card-01.jpg",
+      imageUrl: "/images/publication-card-02.png",
     },
     {
       cardName: "Prática com Computação: Scratch",
       publication: "Medium",
-      imageUrl: "/images/publication-card-01.jpg",
+      imageUrl: "/images/publication-card-03.png",
     },
     {
       cardName:
         "Inteligência Artificial: Breve jornada do Neurônio Artificial à IA Generativa",
       publication: "Medium",
-      imageUrl: "/images/publication-card-01.jpg",
+      imageUrl: "/images/publication-card-04.png",
     },
     {
-      cardName: "Computação Criativa na Educação",
+      cardName:
+        "Computação Criativa na Educação: Repensando Práticas para Engajar Alunos no Século XXI",
       publication: "Medium",
-      imageUrl: "/images/publication-card-01.jpg",
+      imageUrl: "/images/publication-card-05.png",
     },
     {
-      cardName: "How can we evaluate?",
-      publication: "EDUCON",
-      imageUrl: "/images/publication-card-01.jpg",
+      cardName:
+        "How can we evaluate? A Systematic Mapping of Maker Activities and their Intersections with the Formal Education System",
+      publication:
+        "2022 IEEE Global Engineering Education Conference (EDUCON)",
+      imageUrl: "/images/publication-card-06.png",
     },
     {
-      cardName: "Novo artigo teste 1",
-      publication: "Blog",
-      imageUrl: "/images/publication-card-01.jpg",
+      cardName:
+        "A Framework for Collecting and Analyzing Interactions in Scratch Projects",
+      publication:
+        "Latin American Conference on Learning Technologies (LACLO)",
+      imageUrl: "/images/publication-card-07.png",
     },
     {
-      cardName: "Novo artigo teste 2",
-      publication: "Blog",
-      imageUrl: "/images/publication-card-01.jpg",
+      cardName:
+        "Implementação de Programas de Formação Continuada para o Domínio de Tecnologias Educacionais: Análise de Percepções de Educadores sobre o Programa Letramento Digital e Criativo",
+      publication: "Tese Doutorado",
+      imageUrl: "/images/publication-card-08.png",
+    },
+    {
+      cardName:
+        "Near Feasibility, Distant Practicality: Empirical Analysis of Deploying and Using LLMs on Resource-Constrained Smartphones",
+      publication:
+        "ACM - ICTD: Information and Communication Technologies and Development",
+      imageUrl: "/images/publication-card-09.png",
+    },
+    {
+      cardName:
+        "Potencialidades e Desafios na Formação Continuada de Educadores em Metodologias Ativas",
+      publication: "RBIE (Revista Brasileira de Informática na Educação)log",
+      imageUrl: "/images/publication-card-10.png",
+    },
+    {
+      cardName:
+        "ReaCloud: A proposal for the dissemination of open educational resources supported by Semantic Web technologies",
+      publication:
+        "Latin American Conference on Learning Technologies (LACLO)",
+      imageUrl: "/images/publication-card-11.png",
     },
   ];
 
-  const itemsPerPage = 6; // cards por página
-  const [currentPage, setCurrentPage] = useState(0);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(0)
+  const [itemsPerPage, setItemsPerPage] = useState(6)
 
-  // Filtra as publicações pelo nome
-  const filteredPublications = PublicationsData.filter((publication) =>
-    publication.cardName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const updateItems = () => {
+      if (window.innerWidth >= 1024) setItemsPerPage(6) // 3x2
+      else if (window.innerWidth >= 640) setItemsPerPage(4) // 2x2
+      else setItemsPerPage(2) // 1x2
+    }
+    updateItems()
+    window.addEventListener("resize", updateItems)
+    return () => window.removeEventListener("resize", updateItems)
+  }, [])
 
-  // Paginação para os resultados filtrados
-  const totalPages = Math.ceil(filteredPublications.length / itemsPerPage);
-  const startIndex = currentPage * itemsPerPage;
-  const currentCards = filteredPublications.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const totalPages = Math.ceil(PublicationsData.length / itemsPerPage)
 
   const handleNext = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  };
+    if (page < totalPages - 1) setPage((prev) => prev + 1)
+  }
 
   const handlePrev = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
-  };
+    if (page > 0) setPage((prev) => prev - 1)
+  }
 
   return (
-    <div id="publicacoes" className="flex md:flex-row flex-col gap-[25px] justify-center px-8">
+    <div id="publicacoes" className="flex xl:flex-row flex-col gap-[25px] justify-center px-8">
       {/* Lateral esquerda */}
-      <div className="max-w-[260px] w-full">
+      <div className="max-w-[260px] w-full mx-auto xl:mx-0">
         <div className="flex items-center gap-5">
           <h1 className="text-[2.5rem] font-bold pb-5">Publicações</h1>
           <div className="bg-secondary h-1 w-[73px] mb-4" />
@@ -87,40 +113,43 @@ export default function PublicationsSection() {
         <input
           type="text"
           placeholder="Pesquisar"
-          className="w-full mb-16 border border-gray-300 rounded-md px-4 py-2"
-          value={searchTerm}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setCurrentPage(0); // volta à primeira página ao pesquisar
-          }}
+          className="w-full mb-[34px] xl:mb-16 border border-gray-300 rounded-md px-4 py-2"
         />
-
-        <RobopelBanner />
+        <div className="hidden xl:block">
+          <RobopelBanner />
+        </div>
       </div>
 
       {/* Carrossel */}
-      <div className="flex flex-col items-center w-full max-w-[940px]">
-        <div
-          key={currentPage} // força re-render para animação
-          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[25px] justify-center animate-fadeIn"
+      <div className="flex flex-col items-center w-full max-w-[940px] overflow-hidden mx-auto xl:mx-0">
+        <motion.div
+          animate={{ x: `-${page * 100}%` }}
+          transition={{ type: "tween", duration: 0.5 }}
+          className="flex w-full"
         >
-          {currentCards.map((publication, index) => (
-            <PublicationCard key={index} {...publication} />
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <div
+              key={i}
+              className="
+        grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-[25px] w-full flex-shrink-0 
+        justify-items-center xl:justify-items-start
+      "
+            >
+              {PublicationsData.slice(i * itemsPerPage, (i + 1) * itemsPerPage).map((publication, index) => (
+                <PublicationCard key={index} {...publication} />
+              ))}
+            </div>
           ))}
+        </motion.div>
 
-          {currentCards.length === 0 && (
-            <p className="col-span-full text-center text-gray-500 mt-10">
-              Nenhuma publicação encontrada.
-            </p>
-          )}
-        </div>
 
         {/* Controles */}
         {totalPages > 1 && (
           <div className="flex items-center justify-between w-full mt-8">
             <button
               onClick={handlePrev}
-              className="cursor-pointer px-6 py-3 max-w-[160px] lg:max-w-[295px] w-full text-lg bg-secondary text-[#045071] font-semibold hover:bg-yellow-500 transition"
+              disabled={page === 0}
+              className="cursor-pointer px-6 py-3 max-w-[160px] lg:max-w-[295px] w-full text-lg bg-secondary text-[#045071] font-semibold hover:bg-yellow-500 transition disabled:opacity-50"
             >
               ← Voltar
             </button>
@@ -129,22 +158,25 @@ export default function PublicationsSection() {
               {Array.from({ length: totalPages }).map((_, i) => (
                 <span
                   key={i}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    i === currentPage ? "bg-secondary scale-110" : "bg-[#045071]"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all ${i === page ? "bg-secondary scale-110" : "bg-[#045071]"
+                    }`}
                 />
               ))}
             </div>
 
             <button
               onClick={handleNext}
-              className="cursor-pointer px-6 py-3 max-w-[160px] lg:max-w-[295px] w-full text-lg bg-secondary text-[#045071] font-semibold hover:bg-yellow-500 transition"
+              disabled={page === totalPages - 1}
+              className="cursor-pointer px-6 py-3 max-w-[160px] lg:max-w-[295px] w-full text-lg bg-secondary text-[#045071] font-semibold hover:bg-yellow-500 transition disabled:opacity-50"
             >
               Avançar →
             </button>
           </div>
         )}
+        <div className="flex items-center justify-center mx-auto xl:hidden w-full mt-[33px]">
+          <RobopelBanner isFullWidth />
+        </div>
       </div>
     </div>
-  );
+  )
 }

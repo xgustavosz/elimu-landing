@@ -65,35 +65,44 @@ interface TimeLineAlbumProps {
 
 export default function TimeLineAlbum({ year }: TimeLineAlbumProps) {
   return (
-    <>
+    <div className="w-full">
       {year === 213 && (
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
-            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+            <div className="relative  w-full max-w-[182px] aspect-[182/322] bg-primary">
               <Image src={img213_01} alt="Robopel 213 01" fill className="object-cover" placeholder="blur" />
             </div>
-            <div className="relative w-[554px] h-[322px] aspect-auto bg-primary">
-              <video src="/images/timeline/213/timeline-video.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <div className="relative  w-full max-w-[554px] aspect-[554/322] bg-primary">
+              <video
+                src="/images/timeline/213/timeline-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
+
           <div className="flex gap-1">
-            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+            <div className="relative w-full max-w-[182px] aspect-[182/322] bg-primary">
               <Image src={img213_02} alt="Robopel 213 02" fill className="object-cover" placeholder="blur" />
             </div>
-            <div className="relative w-[182px] h-[322px] aspect-auto bg-primary">
+            <div className="relative w-full max-w-[182px] aspect-[182/322] bg-primary">
               <Image src={img213_03} alt="Robopel 213 03" fill className="object-cover" placeholder="blur" />
             </div>
             <div className="flex flex-col gap-1">
-              <div className="relative w-[367px] h-[158px] aspect-auto bg-primary">
+              <div className="relative w-[367px] aspect-[367/158] bg-primary">
                 <Image src={img213_04} alt="Robopel 213 04" fill className="object-cover" placeholder="blur" />
               </div>
-              <div className="relative w-[367px] h-[158px] aspect-auto bg-primary">
+              <div className="relative w-[367px] aspect-[367/158] bg-primary">
                 <Image src={img213_05} alt="Robopel 213 05" fill className="object-cover" placeholder="blur" />
               </div>
             </div>
           </div>
         </div>
       )}
+
 
       {year === 212 && (
         <div className="flex gap-1">
@@ -241,6 +250,6 @@ export default function TimeLineAlbum({ year }: TimeLineAlbumProps) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

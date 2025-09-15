@@ -7,15 +7,15 @@ import Image from "next/image";
 export default function RobopelTimeLineSection() {
     const [isSelected, setIsSelected] = useState(213);
     const timelineYears = [
-        { year: 214, label: 'Em breve' },
-        { year: 213, label: '2025' },
-        { year: 212, label: '2024' },
-        { year: 211, label: '2023' },
-        { year: 210, label: '2022' },
-        { year: 209, label: '2021' },
-        { year: 208, label: '2020' },
-        { year: 207, label: '2019' },
-        { year: 206, label: '2018' },
+        { year: 214, label: 'Em breve', src: '' },
+        { year: 213, label: '2025', src: '/images/timeline-01.png' },
+        { year: 212, label: '2024', src: '/images/timeline-02.png' },
+        { year: 211, label: '2023', src: '/images/timeline-03.png' },
+        { year: 210, label: '2022', src: '/images/timeline-04.png' },
+        { year: 209, label: '2021', src: '/images/timeline-05.png' },
+        { year: 208, label: '2020', src: '/images/timeline-06.png' },
+        { year: 207, label: '2019', src: '/images/timeline-07.png' },
+        { year: 206, label: '2018', src: '/images/timeline-08.png' },
     ]
 
     return (
@@ -70,9 +70,20 @@ export default function RobopelTimeLineSection() {
                             ))}
                         </div>
 
-                        <div className="mx-auto xl:mx-0">
-                            <TimeLineAlbum year={isSelected} />
+
+                        <div className="w-full max-w-[740px] mx-auto xl:mx-0">
+                            {timelineYears.find((y) => y.year === isSelected)?.src && (
+                                <div className="relative w-full max-w-[2226px] aspect-[2226/1972]">
+                                    <Image
+                                        src={timelineYears.find((y) => y.year === isSelected)!.src}
+                                        alt={`Timeline ${isSelected}`}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                            )}
                         </div>
+
                     </div>
                 </div>
             </div>

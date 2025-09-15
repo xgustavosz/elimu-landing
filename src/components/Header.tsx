@@ -8,6 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
@@ -27,9 +28,18 @@ export default function Header() {
     }, delay)
   }
 
-  // cleanup on unmount
+  // Fecha menu ao clicar fora
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+        setIsDropdownOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
       if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
     }
   }, [])
@@ -78,8 +88,9 @@ export default function Header() {
               onMouseLeave={() => closeDropdownWithDelay(180)}
             >
               <span
-                className={`cursor-pointer font-extrabold text-primary transition-shadow ${isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
-                  }`}
+                className={`cursor-pointer font-extrabold text-primary transition-shadow ${
+                  isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
+                }`}
               >
                 ROBOPEL
               </span>
@@ -115,14 +126,18 @@ export default function Header() {
         {/* Botão hamburguer */}
         <div className="relative md:hidden">
           <button
-            className={`relative z-10 ${isOpen ? "mr-10 text-secondary text-4xl" : "mr-0 text-primary text-3xl"} md:hidden`}
+            className={`relative z-10 ${
+              isOpen ? "mr-10 text-secondary text-4xl" : "mr-0 text-primary text-3xl"
+            } md:hidden`}
             onClick={toggleMenu}
           >
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
+
           {isOpen && (
             <div
-            className="absolute bg-white/85 backdrop-blur-[20px] flex justify-end items-end h-[250px] rounded-[5px] border border-[#F0F0F0] top-[-10px] right-[-10px] text-end w-[130px]"
+              ref={menuRef} // <-- ref adicionada aqui
+              className="absolute bg-white/85 backdrop-blur-[20px] flex justify-end items-end h-[250px] rounded-[5px] border border-[#F0F0F0] top-[-10px] right-[-10px] text-end w-[130px]"
             >
               <ul className="flex flex-col gap-6 p-4 text-primary">
                 <li>
@@ -148,7 +163,9 @@ export default function Header() {
                 <li className="relative">
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className={`font-extrabold cursor-pointer transition-shadow ${isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""}`}
+                    className={`font-extrabold cursor-pointer transition-shadow ${
+                      isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
+                    }`}
                   >
                     ... ROBOPEL
                   </button>

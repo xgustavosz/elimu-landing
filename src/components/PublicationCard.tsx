@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AiOutlineLink } from "react-icons/ai";
 
 interface PublicationCardProps {
     cardName: string;
@@ -8,13 +9,15 @@ interface PublicationCardProps {
 
 export default function PublicationCard({ cardName, publication, imageUrl }: PublicationCardProps) {
     return (
-        <div className="w-full max-w-[300px] h-[260px] bg-[#045071] border-2">
+        <div className="min-w-[260px] w-full max-w-[300px] h-[280px] bg-[#045071] border-2">
             <div className="relative w-full h-[140px]">
-                <Image src={imageUrl} alt="Imagem da publicação" fill />
-                <div className="absolute right-0 bottom-0 w-[64px] h-[48px] bg-secondary text-white"></div>
+                <Image src={imageUrl} alt="Imagem da publicação" fill className="object-cover" />
+                <div className="absolute flex items-center justify-center right-0 bottom-0 w-[64px] h-[48px] bg-secondary text-white">
+                    <AiOutlineLink className="text-[40px] rotate-[26deg] text-white" />
+                </div>
             </div>
-            <div className="text-white px-3 pt-[30px] pb-3">
-                <p className="pb-3 font-work-sans font-bold text-[0.9375rem] leading-[15px]">{cardName}</p>
+            <div className="text-white px-3 flex flex-col items-start justify-center gap-2 h-[140px]">
+                <p className="font-work-sans font-bold text-[0.875rem] leading-[15px]">{cardName}</p>
                 <p className="text-[0.625rem] leading-[10px]"><strong>Publicação:</strong> {publication}</p>
             </div>
         </div>
