@@ -11,29 +11,34 @@ export default function PublicationsSection() {
       cardName: "Aprendizado significativo: projetando memórias duradouras",
       publication: "Medium",
       imageUrl: "/images/publication-card-01.jpg",
+      link: "https://medium.com/@dirceumaraschin/aprendizado-significativo-projetando-mem%C3%B3rias-duradouras-3d7423fd3f8a"
     },
     {
       cardName:
         "Celulares nas Escolas: Desafios, Impactos e a Computação Criativa como alternativa",
       publication: "Medium",
       imageUrl: "/images/publication-card-02.png",
+      link: "https://medium.com/@tiagoprimo/celulares-nas-escolas-desafios-impactos-e-a-computa%C3%A7%C3%A3o-criativa-como-alternativa-c1c74149d92f"
     },
     {
       cardName: "Prática com Computação: Scratch",
       publication: "Medium",
       imageUrl: "/images/publication-card-03.png",
+      link: "https://medium.com/@tiagoprimo/pr%C3%A1tica-com-computa%C3%A7%C3%A3o-criativa-scratch-9c5810ca133c"
     },
     {
       cardName:
         "Inteligência Artificial: Breve jornada do Neurônio Artificial à IA Generativa",
       publication: "Medium",
       imageUrl: "/images/publication-card-04.png",
+      link: "https://medium.com/@tiagoprimo/intelig%C3%AAncia-artificial-breve-jornada-do-neur%C3%B4nio-artificial-a-ia-generativa-75b90e1ad875"
     },
     {
       cardName:
         "Computação Criativa na Educação: Repensando Práticas para Engajar Alunos no Século XXI",
       publication: "Medium",
       imageUrl: "/images/publication-card-05.png",
+      link: "https://medium.com/@tiagoprimo/computa%C3%A7%C3%A3o-criativa-na-educa%C3%A7%C3%A3o-repensando-pr%C3%A1ticas-para-engajar-alunos-no-s%C3%A9culo-xxi-32f3e16cf3e1"
     },
     {
       cardName:
@@ -41,6 +46,7 @@ export default function PublicationsSection() {
       publication:
         "2022 IEEE Global Engineering Education Conference (EDUCON)",
       imageUrl: "/images/publication-card-06.png",
+      link: "https://ieeexplore.ieee.org/document/9766456"
     },
     {
       cardName:
@@ -48,12 +54,14 @@ export default function PublicationsSection() {
       publication:
         "Latin American Conference on Learning Technologies (LACLO)",
       imageUrl: "/images/publication-card-07.png",
+      link: "https://ieeexplore.ieee.org/document/8994998"
     },
     {
       cardName:
         "Implementação de Programas de Formação Continuada para o Domínio de Tecnologias Educacionais: Análise de Percepções de Educadores sobre o Programa Letramento Digital e Criativo",
       publication: "Tese Doutorado",
       imageUrl: "/images/publication-card-08.png",
+      link: "https://www.researchgate.net/publication/387895320_Implementacao_de_Programas_de_Formacao_Continuada_para_o_Dominio_de_Tecnologias_Educacionais_Analise_de_Percepcoes_de_Educadores_sobre_o_Programa_Letramento_Digital_e_Criativo"
     },
     {
       cardName:
@@ -61,12 +69,14 @@ export default function PublicationsSection() {
       publication:
         "ACM - ICTD: Information and Communication Technologies and Development",
       imageUrl: "/images/publication-card-09.png",
+      link: "https://dl.acm.org/doi/10.1145/3700794.3700817"
     },
     {
       cardName:
         "Potencialidades e Desafios na Formação Continuada de Educadores em Metodologias Ativas",
       publication: "RBIE (Revista Brasileira de Informática na Educação)log",
       imageUrl: "/images/publication-card-10.png",
+      link: "https://journals-sol.sbc.org.br/index.php/rbie/article/view/4093/3145"
     },
     {
       cardName:
@@ -74,6 +84,7 @@ export default function PublicationsSection() {
       publication:
         "Latin American Conference on Learning Technologies (LACLO)",
       imageUrl: "/images/publication-card-11.png",
+      link: "https://ieeexplore.ieee.org/document/9725133"
     },
   ];
 

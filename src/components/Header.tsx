@@ -61,22 +61,22 @@ export default function Header() {
         <nav className="hidden md:flex">
           <ul className="flex gap-8 relative">
             <li>
-              <Link href="#sobre" className="text-primary hover:underline">
+              <Link href="/#sobre" className="text-primary hover:underline">
                 Sobre
               </Link>
             </li>
             <li>
-              <Link href="#oque-fazemos" className="text-primary hover:underline">
+              <Link href="/#oque-fazemos" className="text-primary hover:underline">
                 O que fazemos
               </Link>
             </li>
             <li>
-              <Link href="#publicacoes" className="text-primary hover:underline">
+              <Link href="/#publicacoes" className="text-primary hover:underline">
                 Publicações
               </Link>
             </li>
             <li>
-              <Link href="#contato" className="text-primary hover:underline">
+              <Link href="/#contato" className="text-primary hover:underline">
                 Contato
               </Link>
             </li>
