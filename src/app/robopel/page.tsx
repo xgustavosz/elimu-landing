@@ -6,7 +6,7 @@ import RobopelTimeLineSection from "@/components/RobopelTimeLineSection";
 
 export default function RobopelPage() {
     return (
-        <div className="overflow-hidden">
+        <div>
             <RobopelHeroSection />
             <RobopelTimeLineSection />
             <FeaturedMaterialsSection />

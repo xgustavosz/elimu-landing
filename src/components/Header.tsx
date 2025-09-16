@@ -141,22 +141,22 @@ export default function Header() {
             >
               <ul className="flex flex-col gap-6 p-4 text-primary">
                 <li>
-                  <Link href="#sobre" onClick={() => setIsOpen(false)}>
+                  <Link href="/#sobre" onClick={() => setIsOpen(false)}>
                     Sobre
                   </Link>
                 </li>
                 <li>
-                  <Link href="#oque-fazemos" onClick={() => setIsOpen(false)}>
+                  <Link href="/#oque-fazemos" onClick={() => setIsOpen(false)}>
                     O que fazemos
                   </Link>
                 </li>
                 <li>
-                  <Link href="#publicacoes" onClick={() => setIsOpen(false)}>
+                  <Link href="/#publicacoes" onClick={() => setIsOpen(false)}>
                     Publicações
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contato" onClick={() => setIsOpen(false)}>
+                  <Link href="/#contato" onClick={() => setIsOpen(false)}>
                     Contato
                   </Link>
                 </li>
