@@ -86,10 +86,11 @@ export default function PublicationsSection() {
       imageUrl: "/images/publication-card-11.png",
       link: "https://ieeexplore.ieee.org/document/9725133"
     },
-  ];
+  ]
 
   const [page, setPage] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(6)
+  const [searchQuery, setSearchQuery] = useState("")
 
   useEffect(() => {
     const updateItems = () => {
@@ -102,7 +103,13 @@ export default function PublicationsSection() {
     return () => window.removeEventListener("resize", updateItems)
   }, [])
 
-  const totalPages = Math.ceil(PublicationsData.length / itemsPerPage)
+  // Filtra os dados de acordo com a pesquisa
+  const filteredData = PublicationsData.filter((item) =>
+    item.cardName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.publication.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage)
 
   const handleNext = () => {
     if (page < totalPages - 1) setPage((prev) => prev + 1)
@@ -111,6 +118,11 @@ export default function PublicationsSection() {
   const handlePrev = () => {
     if (page > 0) setPage((prev) => prev - 1)
   }
+
+  // Resetar para a primeira página ao mudar a pesquisa
+  useEffect(() => {
+    setPage(0)
+  }, [searchQuery])
 
   return (
     <div id="publicacoes" className="flex xl:flex-row flex-col gap-[25px] justify-center px-8">
@@ -124,8 +136,11 @@ export default function PublicationsSection() {
         <input
           type="text"
           placeholder="Pesquisar"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full mb-[34px] xl:mb-16 border border-gray-300 rounded-md px-4 py-2"
         />
+
         <div className="hidden xl:block">
           <RobopelBanner />
         </div>
@@ -141,18 +156,16 @@ export default function PublicationsSection() {
           {Array.from({ length: totalPages }).map((_, i) => (
             <div
               key={i}
-              className="
-        grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-[25px] w-full flex-shrink-0 
-        justify-items-center xl:justify-items-start
-      "
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-[25px] w-full flex-shrink-0 justify-items-center xl:justify-items-start"
             >
-              {PublicationsData.slice(i * itemsPerPage, (i + 1) * itemsPerPage).map((publication, index) => (
-                <PublicationCard key={index} {...publication} />
-              ))}
+              {filteredData
+                .slice(i * itemsPerPage, (i + 1) * itemsPerPage)
+                .map((publication, index) => (
+                  <PublicationCard key={index} {...publication} />
+                ))}
             </div>
           ))}
         </motion.div>
-
 
         {/* Controles */}
         {totalPages > 1 && (
@@ -169,8 +182,9 @@ export default function PublicationsSection() {
               {Array.from({ length: totalPages }).map((_, i) => (
                 <span
                   key={i}
-                  className={`w-3 h-3 rounded-full transition-all ${i === page ? "bg-secondary scale-110" : "bg-[#045071]"
-                    }`}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    i === page ? "bg-secondary scale-110" : "bg-[#045071]"
+                  }`}
                 />
               ))}
             </div>

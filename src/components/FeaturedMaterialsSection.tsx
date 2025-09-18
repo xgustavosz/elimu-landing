@@ -1,4 +1,6 @@
+import { link } from "fs";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineLink } from "react-icons/ai";
 
 export default function FeaturedMaterialsSection() {
@@ -19,9 +21,9 @@ export default function FeaturedMaterialsSection() {
                         <div className="relative w-[150px] h-[19px]">
                             <Image src="/images/featured-image-01.svg" alt="A hora do sul" fill />
                         </div>
-                        <div className="absolute bottom-[-25px] w-[64px] h-[48px] bg-secondary flex items-center justify-center">
+                        <Link href={"https://ahoradosul.com.br/conteudos/2025/07/04/robopel-213-destaca-protagonismo-dos-jovens-que-fazem-ciencia-e-tecnologia/"} target="_blank" className="absolute bottom-[-25px] w-[64px] h-[48px] bg-secondary flex items-center justify-center">
                             <AiOutlineLink className="text-[40px] rotate-[26deg] text-white" />
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="relative w-[350px] h-[171px] bg-secondary flex items-center flex-col gap-4 pt-[23px]">
@@ -29,9 +31,9 @@ export default function FeaturedMaterialsSection() {
                         <div className="relative w-[150px] h-[33px]">
                             <Image src="/images/featured-image-02.svg" alt="Globoplay" fill />
                         </div>
-                        <div className="absolute bottom-[-25px] w-[64px] h-[48px] bg-white flex items-center justify-center">
+                        <Link href={"https://globoplay.globo.com/v/13729865/"} target="_blank" className="absolute bottom-[-25px] w-[64px] h-[48px] bg-white flex items-center justify-center">
                             <AiOutlineLink className="text-[40px] rotate-[26deg] text-secondary" />
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="relative w-[350px] h-[171px] bg-white flex items-center flex-col gap-4 py-[23px]">
@@ -39,9 +41,9 @@ export default function FeaturedMaterialsSection() {
                         <div className="relative w-[150px] h-[39px]">
                             <Image src="/images/featured-image-03.svg" alt="Jornal Tradição" fill />
                         </div>
-                        <div className="absolute bottom-[-25px] w-[64px] h-[48px] bg-secondary flex items-center justify-center">
+                        <Link href={"https://www.jornaltradicao.com.br/regiao/colunistas/oficinas-de-ciencia-arte-e-tecnologia-e-a-inclusao/"} target="_blank" className="absolute bottom-[-25px] w-[64px] h-[48px] bg-secondary flex items-center justify-center">
                             <AiOutlineLink className="text-[40px] rotate-[26deg] text-white" />
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>

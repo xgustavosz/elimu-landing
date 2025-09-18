@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Statewide";
+  src: url("/fonts/statewide/statewide-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 @theme {
-  --color-primary: #1e3a8a;
+  --color-primary: #045071;
   --color-secondary: #fbbf24;
 
   --font-lato: "Lato", sans-serif;
   --font-audiowide: "Audiowide", sans-serif;
   --font-work-sans: "Work Sans", sans-serif;
+  --font-statewide: "Statewide", sans-serif;
 }
 
 @keyframes scroll {

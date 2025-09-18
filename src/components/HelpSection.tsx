@@ -20,7 +20,7 @@ export default function HelpSection() {
     ];
 
     return (
-        <div id="oque-fazemos" className="flex flex-col items-center justify-center px-8 pt-0 max-w-7xl w-full mx-auto">
+        <div id="oque-fazemos" className="flex flex-col items-center justify-center px-8 pt-0 max-w-7xl w-full mx-auto mt-[-140px] lg:mt-20">
             <div className="text-center">
                 <h1 className="font-extrabold text-[2.5rem]">Como ajudamos a sua escola?</h1>
                 <p className="font-medium text-start md:text-center text-[1.125rem] pt-[30px]">Oferecemos programas combinados de formação docente e oficinas práticas para estudantes,<br /> sempre alinhados à BNCC Computação e personalizados para cada escola ou rede.</p>

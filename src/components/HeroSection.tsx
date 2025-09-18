@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="relative max-w-7xl px-6 mx-auto h-full flex flex-col md:flex-row items-center lg:justify-between w-full">
         {/* Texto à esquerda */}
         <div className="lg:flex-1 pb-4 mx-auto flex flex-col items-center lg:items-start justify-center space-y-6 text-left">
-          <h1 className="text-primary md:w-full w-[380px] text-5xl font-bold font-audiowide">
+          <h1 className="text-primary md:w-full w-[380px] text-5xl font-audiowide">
             Educação Criativa e <br /> Tecnológica, <span className="text-secondary">sem complicação</span>.
           </h1>
           <p className="text-xl py-[50px] md:py-0 text-primary max-w-[400px] md:max-w-[650px]">

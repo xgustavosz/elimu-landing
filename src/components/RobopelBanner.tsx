@@ -7,7 +7,7 @@ interface RobopelBannerProps {
 export default function RobopelBanner({ isFullWidth }: RobopelBannerProps) {
     return (
         <div
-            className={`relative ${isFullWidth ? "w-full" : "w-[260px]"} h-[445px] flex flex-col font-audiowide text-3xl text-center align-center justify-start`}
+            className={`relative ${isFullWidth ? "w-full" : "w-[260px]"} h-[484px] flex flex-col font-audiowide text-3xl text-center align-center justify-start`}
             style={{
                 backgroundImage: "url('/images/background-robopel-banner.png')",
                 backgroundSize: "cover",

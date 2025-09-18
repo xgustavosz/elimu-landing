@@ -12,7 +12,7 @@ const clients = [
   { src: "/images/client-07.png", alt: "Cliente 07" },
   { src: "/images/client-08.jpg", alt: "Cliente 08" },
   { src: "/images/client-09.png", alt: "Cliente 09" },
-  { src: "/images/client-10.jpg", alt: "Cliente 10" },
+  { src: "/images/client-10.png", alt: "Cliente 10" },
   { src: "/images/client-11.png", alt: "Cliente 11" },
   { src: "/images/client-12.png", alt: "Cliente 12" },
   { src: "/images/client-13.png", alt: "Cliente 13" },

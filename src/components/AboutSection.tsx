@@ -27,7 +27,22 @@ export default function AboutSection() {
         <section id="sobre" className="relative max-w-7xl mx-auto lg:pt-20">
             <div className="relative w-full h-[517px]">
                 {imagesUrls.map((src, index) => (
-                    <div key={index} className="absolute top-0 left-0 w-[955px] h-[517px]">
+                    <div
+                        key={index}
+                        className="absolute top-0 left-0 w-[955px] h-[517px]"
+                    >
+                        {/* Indicadores */}
+                        <div className="flex gap-2 absolute top-2 right-[-22px] z-20">
+                            {imagesUrls.map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`w-[32px] h-1 transition-colors duration-300 ${i === currentIndex ? "bg-[#FCC203]" : "bg-[#045071]"
+                                        }`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Imagem */}
                         <Image
                             src={src}
                             alt="Escritório Elimu"
@@ -41,7 +56,7 @@ export default function AboutSection() {
 
             <div className="h-[475px] hidden lg:block" />
 
-            <div className="relative pt-[200px] lg:pt-10 lg:absolute top-[-180px] lg:top-[550px] lg:right-8 lg:max-w-[855px] w-full lg:max-h-[475px] h-full px-[30px] lg:px-[60px] py-[30px] text-white bg-[#045071]">
+            <div className="relative pt-[200px] lg:pt-10 lg:absolute top-[-180px] lg:top-[550px] lg:right-8 lg:max-w-[855px] w-full lg:max-h-[520px] h-full px-[30px] lg:px-[60px] py-[30px] text-white bg-[#045071]">
                 <div className="absolute top-[180px] lg:top-0 right-0 w-0 h-0 border-t-[34px] border-l-[34px] border-t-secondary border-l-transparent z-10" />
 
                 <div className="flex items-center gap-5">
@@ -61,7 +76,7 @@ export default function AboutSection() {
                 </p>
                 <p className="font-medium text-[1.25rem]">
                     <strong>
-                        Todas nossas oficinas são gratuitas para as redes públicas
+                        Todas nossas oficinas são gratuitas para alunos e professores das redes públicas
                     </strong>
                     , garantindo acesso inclusivo e equitativo à formação em tecnologia.
                     Nossa atuação é viabilizada por meio de parcerias com secretarias de

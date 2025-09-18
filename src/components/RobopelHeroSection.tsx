@@ -6,13 +6,13 @@ export default function RobopelHeroSection() {
     return (
         <div
             id="evento"
-            className="pt-[100px] px-8 mx-auto pb-[50px]"
+            className="pt-[100px] px-8 mx-auto pb-[50px] drop-shadow-lg shadow-[#00000096]"
             style={{ background: 'url(/images/background-contact-section.jpg) no-repeat center', backgroundSize: 'cover' }}
         >
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-[700px] flex flex-col items-center md:items-start">
                     <div className="relative w-[360px] h-[80px]">
-                        <Image src="/images/robopel-title.svg" alt="Robopel" fill />
+                        <Image src="/images/robopel-title.png" alt="Robopel" fill />
                     </div>
 
                     <h2 className="font-extrabold text-[2.5rem]">Ciência, Arte, Tecnologia e Inclusão</h2>

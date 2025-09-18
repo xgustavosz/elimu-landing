@@ -88,11 +88,12 @@ export default function Header() {
               onMouseLeave={() => closeDropdownWithDelay(180)}
             >
               <span
-                className={`cursor-pointer font-extrabold text-primary transition-shadow ${
-                  isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
-                }`}
+                className={`cursor-pointer font-extrabold text-primary transition-shadow ${isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
+                  }`}
               >
-                ROBOPEL
+                <Link href="/robopel" className="text-primary">
+                  ROBOPEL
+                </Link>
               </span>
 
               {isDropdownOpen && (
@@ -126,9 +127,8 @@ export default function Header() {
         {/* Botão hamburguer */}
         <div className="relative md:hidden">
           <button
-            className={`relative z-10 ${
-              isOpen ? "mr-10 text-secondary text-4xl" : "mr-0 text-primary text-3xl"
-            } md:hidden`}
+            className={`relative z-10 ${isOpen ? "mr-10 text-secondary text-4xl" : "mr-0 text-primary text-3xl"
+              } md:hidden`}
             onClick={toggleMenu}
           >
             {isOpen ? <FiX /> : <FiMenu />}
@@ -163,9 +163,8 @@ export default function Header() {
                 <li className="relative">
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className={`font-extrabold cursor-pointer transition-shadow ${
-                      isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
-                    }`}
+                    className={`font-extrabold cursor-pointer transition-shadow ${isDropdownOpen ? "drop-shadow-[0_4px_4px_rgba(252,194,3,0.35)]" : ""
+                      }`}
                   >
                     ... ROBOPEL
                   </button>

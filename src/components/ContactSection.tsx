@@ -17,13 +17,9 @@ export default function ContactSection() {
         const { name, value } = e.target;
 
         if (name === "telefone") {
-            // Remove tudo que não for número
             let onlyNumbers = value.replace(/\D/g, "");
-
-            // Limita no máximo 11 dígitos (DDD + 9 dígitos)
             if (onlyNumbers.length > 11) onlyNumbers = onlyNumbers.slice(0, 11);
 
-            // Aplica a máscara (99) 99999-9999
             let formatted = onlyNumbers;
             if (onlyNumbers.length > 2) {
                 formatted = `(${onlyNumbers.slice(0, 2)}) ${onlyNumbers.slice(2)}`;
@@ -45,7 +41,6 @@ export default function ContactSection() {
         if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email inválido";
         if (!formData.assunto.trim()) newErrors.assunto = "Campo obrigatório";
 
-        // Validação do telefone só se foi preenchido
         if (formData.telefone && !/^\(\d{2}\) \d{5}-\d{4}$/.test(formData.telefone)) {
             newErrors.telefone = "Formato inválido. Ex: (11) 98765-4321";
         }
@@ -67,9 +62,18 @@ export default function ContactSection() {
     return (
         <section
             id="contato"
-            className="relative w-full bg-cover bg-center py-[60px] px-6 md:px-0"
-            style={{ backgroundImage: "url('/images/background-contact-section.jpg')" }}
+            className="relative w-full py-[60px] px-6 md:px-0 overflow-hidden"
         >
+            {/* Fundo invertido e com opacidade */}
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-40"
+                style={{
+                    backgroundImage: "url('/images/background-contact-section.jpg')",
+                    transform: "scaleX(-1)",
+                }}
+            />
+
+            {/* Conteúdo */}
             <div className="relative max-w-[440px] mx-auto text-center z-20 2xl:z-10">
                 <h1 className="text-[2.5rem] font-bold pb-2">Vamos conversar?</h1>
                 <p>
@@ -134,6 +138,7 @@ export default function ContactSection() {
                     </button>
                 </form>
             </div>
+
             <div className="absolute hidden lg:block right-0 xl:right-16 bottom-0 overflow-hidden pointer-events-none w-[410px] h-[615px] z-10 2xl:z-20">
                 <Image
                     src="/images/person-contact.png"

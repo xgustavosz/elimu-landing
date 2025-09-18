@@ -19,9 +19,14 @@ export default function RobopelCallSection() {
                         Chamar a Elimu
                     </button>
                 </div>
-            </div>
-            <div className="absolute w-[876px] h-[600px] bottom-[-25px] hidden lg:block right-[80px] z-20">
-                <Image src="/images/robopel-call-section.png" alt="Robopel" fill />
+                <div className="absolute w-[846px] rotate-[-4deg] h-[570px] bottom-[-166px] hidden xl:block right-0 z-20">
+                    <Image
+                        src="/images/robopel-call-section.png"
+                        alt="Robopel"
+                        fill
+                        className="object-contain scale-x-[-1]"
+                    />
+                </div>
             </div>
         </div>
     )

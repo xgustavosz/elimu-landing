@@ -17,13 +17,9 @@ export default function RobopelContactSection() {
         const { name, value } = e.target;
 
         if (name === "telefone") {
-            // Remove tudo que não for número
             let onlyNumbers = value.replace(/\D/g, "");
-
-            // Limita no máximo 11 dígitos (DDD + 9 dígitos)
             if (onlyNumbers.length > 11) onlyNumbers = onlyNumbers.slice(0, 11);
 
-            // Aplica a máscara (99) 99999-9999
             let formatted = onlyNumbers;
             if (onlyNumbers.length > 2) {
                 formatted = `(${onlyNumbers.slice(0, 2)}) ${onlyNumbers.slice(2)}`;
@@ -73,17 +69,32 @@ export default function RobopelContactSection() {
     return (
         <section
             id="seja-parceiro"
-            className="relative w-full bg-cover bg-center py-[60px] px-8 md:px-0"
-            style={{ backgroundImage: "url('/images/background-contact-section.jpg')" }}
+            className="relative w-full bg-cover bg-center py-[60px] px-8 md:px-0 overflow-hidden"
         >
+            {/* Overlay com imagem invertida e opacidade */}
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-40 scale-x-[-1]"
+                style={{ backgroundImage: "url('/images/background-contact-section.jpg')" }}
+            ></div>
+
+            {/* Conteúdo */}
             <div className="relative mx-auto text-center z-20 2xl:z-10">
                 <h1 className="text-[2.5rem] font-bold">
-                    Seja parceiro <span className="text-secondary">ROBOPEL 214</span>
+                    Seja parceiro <span className="font-statewide text-secondary">ROBOPEL 214</span>
                 </h1>
                 <p>Envie seus dados que entraremos em contato.</p>
             </div>
 
             <div className="relative max-w-[600px] w-full mx-auto pt-10 z-20 2xl:z-10">
+                <div className="absolute hidden lg:block right-[-320px] bottom-[-190px] overflow-hidden pointer-events-none w-[380px] h-[424px] z-10 2xl:z-20">
+                    <Image
+                        src="/images/robopel-contact-section.png"
+                        alt="Contato"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="flex flex-col gap-4 md:gap-2 md:justify-between">
                         <input
@@ -143,15 +154,6 @@ export default function RobopelContactSection() {
                         Enviar
                     </button>
                 </form>
-            </div>
-
-            <div className="absolute hidden lg:block right-0 xl:right-[150px] bottom-[-70px] overflow-hidden pointer-events-none w-[319px] h-[334px] z-10 2xl:z-20">
-                <Image
-                    src="/images/robopel-contact-section.png"
-                    alt="Contato"
-                    fill
-                    className="object-cover"
-                />
             </div>
         </section>
     );
