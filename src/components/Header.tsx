@@ -45,7 +45,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 h-[100px] bg-white/85 backdrop-blur-[8px]">
+    <header className="font-lato fixed top-0 left-0 w-full z-50 h-[100px] bg-white/85 backdrop-blur-[8px]">
       <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
 
         {/* Logo */}
@@ -171,22 +171,22 @@ export default function Header() {
                   {isDropdownOpen && (
                     <ul className="absolute text-center border border-[#F0F0F0] rounded-[5px] py-2 w-[130px] bg-white top-[-2px] left-[-120px] flex flex-col gap-2">
                       <li>
-                        <Link href="/evento" onClick={() => setIsOpen(false)}>
+                        <Link href="/robopel#evento" onClick={() => setIsOpen(false)}>
                           O evento
                         </Link>
                       </li>
                       <li>
-                        <Link href="/linha-do-tempo" onClick={() => setIsOpen(false)}>
+                        <Link href="/robopel#linha-do-tempo" onClick={() => setIsOpen(false)}>
                           Linha do tempo
                         </Link>
                       </li>
                       <li>
-                        <Link href="/materias" onClick={() => setIsOpen(false)}>
+                        <Link href="/robopel#materias" onClick={() => setIsOpen(false)}>
                           Matérias
                         </Link>
                       </li>
                       <li>
-                        <Link href="/seja-parceiro" onClick={() => setIsOpen(false)}>
+                        <Link href="/robopel#seja-parceiro" onClick={() => setIsOpen(false)}>
                           Seja Parceiro
                         </Link>
                       </li>

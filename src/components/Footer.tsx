@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="relative md:h-[366px] text-white md:py-4 pt-4 pb-30 md:pb-0 z-20">
+        <footer className="font-lato relative md:h-[366px] text-white md:py-4 pt-4 pb-30 md:pb-0 z-20">
             {/* Background + Overlay */}
             <div className="absolute inset-0">
                 <div

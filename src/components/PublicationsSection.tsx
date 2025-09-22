@@ -125,7 +125,7 @@ export default function PublicationsSection() {
   }, [searchQuery])
 
   return (
-    <div id="publicacoes" className="flex xl:flex-row flex-col gap-[25px] justify-center px-8">
+    <div id="publicacoes" className="font-lato flex xl:flex-row flex-col gap-[25px] justify-center px-8">
       {/* Lateral esquerda */}
       <div className="max-w-[260px] w-full mx-auto xl:mx-0">
         <div className="flex items-center gap-5">

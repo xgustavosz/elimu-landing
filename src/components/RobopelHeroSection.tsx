@@ -9,7 +9,7 @@ export default function RobopelHeroSection() {
             className="pt-[100px] px-8 mx-auto pb-[50px] drop-shadow-lg shadow-[#00000096]"
             style={{ background: 'url(/images/background-contact-section.jpg) no-repeat center', backgroundSize: 'cover' }}
         >
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl px-6 mx-auto">
                 <div className="max-w-[700px] flex flex-col items-center md:items-start">
                     <div className="relative w-[360px] h-[80px]">
                         <Image src="/images/robopel-title.png" alt="Robopel" fill />

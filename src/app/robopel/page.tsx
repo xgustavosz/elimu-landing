@@ -6,7 +6,7 @@ import RobopelTimeLineSection from "@/components/RobopelTimeLineSection";
 
 export default function RobopelPage() {
     return (
-        <div>
+        <div className="font-lato">
             <RobopelHeroSection />
             <RobopelTimeLineSection />
             <FeaturedMaterialsSection />

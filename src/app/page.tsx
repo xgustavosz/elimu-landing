@@ -9,7 +9,7 @@ import PublicationsSection from "@/components/PublicationsSection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-lato" >
       <HeroSection />
       <AboutSection />
       <HelpSection />

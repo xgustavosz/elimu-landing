@@ -24,7 +24,7 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <div className="relative flex flex-col justify-center align-center mx-auto text-center z-20 2xl:z-10 h-[340px]">
+    <div className="font-lato relative flex flex-col justify-center align-center mx-auto text-center z-20 2xl:z-10 h-[340px]">
       <h1 className="text-[2.5rem] font-bold pb-2">Nossos clientes</h1>
       <p>A rede de colaboração é o que torna tudo isso possível!</p>
 
